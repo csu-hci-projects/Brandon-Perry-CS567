@@ -8,9 +8,10 @@ I have:
   - Created another code to track an area of pixels and measure the depth / displacement; this code is still a work in progress.
   
   Moving Forward:
+  
   I plan:
-    - to make the code more robust
-    - to measure the accuracy and compare to the ground truth data
+  - to make the code more robust
+  - to measure the accuracy and compare to the ground truth data
     
     
 Check Point 2:
@@ -19,6 +20,7 @@ I have:
   - Created a program to measure displacements using an RGB camera with an idea to use only one sensor to capture 3D data
   
   Moveing Forward:
+  
   I plan:
   - to measure the accuracy and compare to ground truth data
   - study feasibility of attaching sensor to UAV
