@@ -14,7 +14,7 @@ I have:
   - to measure the accuracy and compare to the ground truth data
     
     
-Check Point 2:
+\underline{Check Point 2:}
 I have:
   - Collect Data to analyze including movements from a shake table, movements of a wire from induced excitation, and movements of a wire from an explosive blast collected using an RBG sensor on a UAV.
   - Created a program to measure displacements using an RGB camera with an idea to use only one sensor to capture 3D data
