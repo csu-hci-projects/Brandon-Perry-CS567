@@ -17,8 +17,9 @@ Check Point 2:
 I have:
   - Collect Data to analyze including movements from a shake table, movements of a wire from induced excitation, and movements of a wire from an explosive blast collected using an RBG sensor on a UAV.
   - Created a program to measure displacements using an RGB camera with an idea to use only one sensor to capture 3D data
-Moveing Forward:
-I plan:
+  
+  Moveing Forward:
+  I plan:
   - to measure the accuracy and compare to ground truth data
   - study feasibility of attaching sensor to UAV
   - Create User Friendly visualization of the out data
