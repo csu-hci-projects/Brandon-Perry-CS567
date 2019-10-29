@@ -1,6 +1,6 @@
 # Brandon-Perry-CS567
 
-Check Point 1
+**Check Point 1**
 I have:
   - Began to write the literature review of the final paper
   - Set up a simple shake-table to induced a know movement / displacement on an object which can then be measured with the DepthSense Cameras
@@ -14,7 +14,7 @@ I have:
   - to measure the accuracy and compare to the ground truth data
     
     
-\underline{Check Point 2:}
+**Check Point 2:**
 I have:
   - Collect Data to analyze including movements from a shake table, movements of a wire from induced excitation, and movements of a wire from an explosive blast collected using an RBG sensor on a UAV.
   - Created a program to measure displacements using an RGB camera with an idea to use only one sensor to capture 3D data
