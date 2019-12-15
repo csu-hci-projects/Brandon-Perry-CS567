@@ -1,6 +1,7 @@
-# Brandon-Perry-CS567
+# A Methodology for the Simultaneous Monitoring of Bridge Load and Induced 3-D Displacement using Unmanned Aerial Vehicles (UAVs) with Real-Time Data Interpretation User Study
 
 **Overview of Project**
+
 This project proposes a framework to measure the 3-D displacement of Bridge and create a full input-outout data acquistion model. A User-Study is also presented to decide the effacacy of providing real-time data to civil engineers in the field. The project is presented in four modules:
 
   1. A Truck Trakcing Module to follow a truck from a weigh-in-motion station on the United State's Interstate's Systems to a bridge of interest to provide the dynamic live loading of a bridge.
