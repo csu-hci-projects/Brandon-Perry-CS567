@@ -1,27 +1,12 @@
 # Brandon-Perry-CS567
 
-**Check Point 1**
-I have:
-  - Began to write the literature review of the final paper
-  - Set up a simple shake-table to induced a know movement / displacement on an object which can then be measured with the DepthSense Cameras
-  - Implemented some code. I created Two_Cameras_Center_Displacement.py which is a simple program to mesure movements and displacements of the center pixel using the Intel RealSense cameras
-  - Created another code to track an area of pixels and measure the depth / displacement; this code is still a work in progress.
-  
-  Moving Forward:
-  
-  I plan:
-  - to make the code more robust
-  - to measure the accuracy and compare to the ground truth data
-    
-    
-**Check Point 2:**
-I have:
-  - Collect Data to analyze including movements from a shake table, movements of a wire from induced excitation, and movements of a wire from an explosive blast collected using an RBG sensor on a UAV.
-  - Created a program to measure displacements using an RGB camera with an idea to use only one sensor to capture 3D data
-  
-  Moveing Forward:
-  
-  I plan:
-  - to measure the accuracy and compare to ground truth data
-  - study feasibility of attaching sensor to UAV
-  - Create User Friendly visualization of the out data
+**Overview of Project**
+This project proposes a framework to measure the 3-D displacement of Bridge and create a full input-outout data acquistion model. A User-Study is also presented to decide the effacacy of providing real-time data to civil engineers in the field. The project is presented in four modules:
+ 1.) A Truck Trakcing Module to follow a truck from a weigh-in-motion station on the United State's Interstate's Systems to a bridge of interest to provide the dynamic live loading of a bridge.
+ 2.) A 2-D Planar Measurement Module using an optical RGB sensor attached to a UAV
+ 3.) A 1-D Depth Measurement Module using an Intel RealSense D35 Sensor
+ 4.) A User-Study Module to measure the efectiveness of providign real-time data to civil engineers in the field.
+ 
+ The Python code for the four modules are located in the Source_Code Folder.
+ Check Points for the semester are located in the Check_Points File.
+ The Final Paper is given in the Writings Folder.
