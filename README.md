@@ -14,3 +14,9 @@ This project proposes a framework to measure the 3-D displacement of Bridge and 
  Check Points for the semester are located in the Check_Points File.
  
  The Final Paper is given in the Writings Folder.
+
+**Results**
+|  | Correctness | Standard Deviation |
+|----------------:|:-----------:|:------------------:|
+| Real-Time Data  | 5\% | 0.5 |
+| Post-Processed | 80\% | 0.5 |
