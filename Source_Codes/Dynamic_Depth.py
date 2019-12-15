@@ -14,7 +14,7 @@ def distance(depth_image, r, depth_scale) :
 
     try :
     
-        di2 = np.where((di1 > 0.5) | (di1 <= 0.25), 0, di1)
+        di2 = np.where((di1 > 0.55) | (di1 <= 0.25), 0, di1)
         di3 = di2.ravel()
         di3.sort()
         while True :
@@ -39,8 +39,8 @@ if technique == 1 or technique == 2 :
 
     # Load files if applicable here:
     if technique == 2 :
-        file_name_1 = 'C:/Users/bjperry/Research/Real_Sense/Data Files/10.14.19_Test/20191014_152620.bag'
-        file_name_2 = 'C:/Users/bjperry/Research/Real_Sense/Data Files/10.14.19_Test/20191014_152621.bag'
+        file_name_1 = 'E:/Bag Files/6-175-225-30-1.bag'
+        file_name_2 = 'E:/Bag Files/6-175-225-30-2.bag'
     
     # Load in Cameras if Live Stream was selected
     if technique == 1 :
@@ -62,14 +62,14 @@ if technique == 1 or technique == 2 :
         config_2 = rs.config()
         
         # Load Setting
-        with open("E:/CS 567 - 3D User Interface/RealSense/JSONs/Settings.json", \
+        with open("G:/CS 567 - 3D User Interface/Project/JSONs/Settings.json", \
                   'r') as file:
             json_temp = json.load(file)
             json_temp['controls-autoexposure-auto'] = 'True'
             json_temp['controls-laserpower'] = 150
             json_temp['param-depthunits'] = 5000
             json_temp['controls-laserstate'] = 'on'
-            json_temp['stream-fps'] = 60
+            json_temp['stream-fps'] = 30
             json_temp['stream-width'] = 424 #848
             json_temp['stream-height'] = 240 #480
         
@@ -97,11 +97,11 @@ if technique == 1 or technique == 2 :
         profile_1 = pipeline_1.start(config_1)
         profile_2 = pipeline_2.start(config_2)
             
-        with open("E:/CS 567 - 3D User Interface/RealSense/JSONs/Settings_temp.json", \
+        with open("G:/CS 567 - 3D User Interface/Project/JSONs/Settings_temp.json", \
                   'w') as file:
             json.dump(json_temp, file, indent=2)
             
-        with open("E:/CS 567 - 3D User Interface/RealSense/JSONs/Settings_temp.json", \
+        with open("G:/CS 567 - 3D User Interface/Project/JSONs/Settings_temp.json", \
                   'r') as file:
             json_text = file.read()
             # Get the active profile and load the json file which contains settings 
@@ -150,7 +150,7 @@ if technique == 1 or technique == 2 :
         
             if reset:
         
-                # Wait for a coherent pair of frames: depth and color
+                 # Wait for a coherent pair of frames: depth and color
                 frames_1 = pipeline_1.wait_for_frames()
                 ir1_frame_1 = frames_1.get_infrared_frame(1)
     
@@ -265,7 +265,7 @@ if technique == 1 or technique == 2 :
             if technique == 2:
                 # Save Data to Plot
                 frame += 1 
-                displacement = np.vstack((displacement,  [(frame/90), \
+                displacement = np.vstack((displacement,  [(time.time() - time_begin), \
                                                           depth_1, depth_2]))        
     
             # Press esc or 'q' to close the image window
@@ -299,29 +299,33 @@ ax1.plot(displacement[1:len(displacement),0], \
          displacement[1:len(displacement),1])
 ax1.plot(displacement[1:len(displacement),0], \
          displacement[1:len(displacement),2])
-ax1.set_ylim([0.25, 0.55])
+ax1.set_ylim([0.25, 0.52]) #[0.25, 1.0])
 ax1.set_title('Average Movement within ROI')
 ax1.set_xlabel('Time (sec)')
 ax1.set_ylabel('Distance from Camera (meter)')
+plt.legend(('Movement in X-Direction', 'Movement in Y-Direction'))
 
 # Determine variables
 N = displacement.shape[0] 
 Fs = N/(displacement[len(displacement)-1, 0] - displacement[0, 0])
 T = (displacement[len(displacement)-1, 0] - displacement[0, 0])
-print('Number of Samples: ', N)
-print('Sampling Frquency (Hz): ', Fs)
 
 #Compute and Plot FFT  
 xf = np.linspace(0, Fs, N)
+
 yf_1 = fft(displacement[:, 1])
 yf_1 = 2.0/N * np.abs(yf_1[0:int(N/2)])
+
 yf_2 = fft(displacement[:, 2])
 yf_2 = 2.0/N * np.abs(yf_2[0:int(N/2)])
+
+yf_11 = (yf_1 - np.min(yf_1)) / np.ptp(yf_1)
+yf_22 = (yf_2 - np.min(yf_2)) / np.ptp(yf_2)
+
 ax3 = fig.add_subplot(212)
-ax3.plot(xf[1:int(N/2)], yf_1[1:len(xf)])
-ax3.plot(xf[1:int(N/2)], yf_2[1:len(xf)])
-ax3.set_xlim([0, 4])
-ax3.set_title('FFT')
+ax3.plot(xf[1:int(N/2)], yf_11[1:len(xf)])
+ax3.plot(xf[1:int(N/2)], yf_22[1:len(xf)])
+ax3.set_xlim([0, 4]) # 0 - 4
 ax3.set_xlabel('Frequency (Hz)')
 ax3.set_ylabel('Amplitude')
 ax3.grid()
