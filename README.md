@@ -19,5 +19,5 @@ This project proposes a framework to measure the 3-D displacement of Bridge and 
 
 |                 	| Correctness 	| Standard Deviation 	|
 |----------------:	|:-----------:	|:------------------:	|
-| Real-Time Data  	|     5\%     	|         0.5        	|
-|  Post-Processed 	|     80\%    	|         0.5        	|
+| Real-Time Data  	|     25\%     	|         0.43       	|
+|  Post-Processed 	|     88\%    	|         0.33       	|
