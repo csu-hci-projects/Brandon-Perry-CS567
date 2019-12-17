@@ -1,23 +1,29 @@
-# A Methodology for the Simultaneous Monitoring of Bridge Load and Induced 3-D Displacement using Unmanned Aerial Vehicles (UAVs) with Real-Time Data Interpretation User Study
+## **A Methodology for the Simultaneous Monitoring of Bridge Load and Induced 3-D Displacement using Unmanned Aerial Vehicles (UAVs) with a Real-Time Data Interpretation User Study**
 
 **Overview of Project**
 
-This project proposes a framework to measure the 3-D displacement of Bridge and create a full input-outout data acquistion model. A User-Study is also presented to decide the effacacy of providing real-time data to civil engineers in the field. The project is presented in four modules:
+Fully understanding bridge performance during traffic is critical for effective condition assessment. 
+Modern structural health monitoring (SHM) has enabled measurements of traffic loads and dynamic responses; 
+however, challenges still exist for accurately synchronizing the two inputs. 
+Recently, with advancements in unmanned aerial vehicles (UAVs) technology, 
+UAVs can hover at specified heights and key locations to provide high-quality sensory data. 
+By leveraging UAVs and image computation, this study proposes a UAV-based SHM framework to track vehicular loading and measure the 3-D displacement of 
+a bridge simultaneously.
+ In the proposed methodology, multiple UAVs will hover adjacent to a bridge to collect data of the moving traffic and structural response. 
+Through a case study, the potential of synchronizing dynamic traffic loads and 3-D structural response is demonstrated. 
+Lastly, a user study is presented to determine the importance of real-time information compared to post-process information for civil engineers in the field. 
 
-  1. A Truck Trakcing Module to follow a truck from a weigh-in-motion station on the United State's Interstate's Systems to a bridge of interest to provide the dynamic live loading of a bridge.
-  2. A 2-D Planar Measurement Module using an optical RGB sensor attached to a UAV
-  3. A 1-D Depth Measurement Module using an Intel RealSense D35 Sensor
-  4. A User-Study Module to measure the efectiveness of providign real-time data to civil engineers in the field.
- 
- The Python code for the four modules are located in the Source_Code Folder.
- 
- Check Points for the semester are located in the Check_Points File.
- 
- The Final Paper is given in the Writings Folder.
+The entire project framework is presented within four modules:
 
-**Results**
+  1. [**Truck Tracking Module:**](https://cs.colostate.edu/~bjperry/index.html#/module-1 "Module 1") In this module, an algorithm is developed to follow and track a large truck (i.e. 18-wheeler) with a UAV from a weigh-in-motion station on the United State's Interstate's Systems to the bridge of interest. The weigh-in-motion stations on the interstate systems will provide the real weight of the trucks. Knowing this weight and having the ability to track its position overtime to the test bridge site will provide the dynamic live loading of a bridge and help develop the first half of an input-output model.
+  2. [**2-D Planar Measurement Module:**](https://cs.colostate.edu/~bjperry/index.html#/module-2 "Module 2") Using an optical RGB sensor attached to a UAV hovering normal to a plane of interest, an algorithm is developed which detects and tracks key-points in the image to measure the movement of an object. Since a UAV is hovering during the data recording, a background compensation technique is developed to account for and correct the movement of the UAV to find the true movement of the region of interest. 
+  3. [**1-D Depth Measurement Module:**](https://cs.colostate.edu/~bjperry/index.html#/module-3 "Module 3") An Intel RealSense D35 Sensor is used to measure the depth from an object to the sensor. Using a virtual, projected speckle pattern, two infrared cameras are used to calculate depth. This depth measurement or, more importantly, the change of depth measurement provides the third dimensional displacement of an object.
+  4. [**User-Study Module:**](https://cs.colostate.edu/~bjperry/index.html#/module-4 "Module 4") Providing the information from this framework in real-time to engineers in the field can be challenging and may require additional hardware and software; therefore, a user study is performed to measure the effectiveness of providing real-time as opposed to post-processed information interpreted in-office. 
 
-|                 	| Correctness 	| Standard Deviation 	|
-|----------------:	|:-----------:	|:------------------:	|
-| Real-Time Data  	|     25\%     	|         0.43       	|
-|  Post-Processed 	|     88\%    	|         0.33       	|
+The Python Source Code Files can be found in the Source_Code Folder.
+The Check Point Notes is found in the Check Point File.
+And the Latex Papers can be found in the Latex Folder.
+
+| ![UAV Flight](images/IMG_2576.jpg "UAV Surveying a Bridge") |
+|:--:|
+| **UAV Bridge Survey** |
