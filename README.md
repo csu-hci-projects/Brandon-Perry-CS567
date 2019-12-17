@@ -24,6 +24,6 @@ The Python Source Code Files can be found in the Source_Code Folder.
 The Check Point Notes is found in the Check Point File.
 And the Latex Papers can be found in the Latex Folder.
 
-| ![UAV Flight](images/IMG_2576.jpg "UAV Surveying a Bridge") |
+| ![UAV Flight](Brandon-Perry-CS567/Latex_Files/Figures/IMG_2576.jpg "UAV Surveying a Bridge") |
 |:--:|
 | **UAV Bridge Survey** |
